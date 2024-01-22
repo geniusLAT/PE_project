@@ -4,3 +4,4 @@ einops
 streamlit
 pipeline-ai
 transformers
+requests
