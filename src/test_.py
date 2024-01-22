@@ -1,4 +1,4 @@
-from selenium import webdriver
+'''from selenium import webdriver
 options = webdriver.ChromeOptions()
 from selenium.webdriver.common.by import By
 import time
@@ -47,3 +47,18 @@ if __name__ =="__main__":
     assert CheckPhrase("Вы твари")=='toxic'
     assert CheckPhrase("Вы милые люди")=='neutral'
     
+'''
+
+
+
+import requests
+
+url = 'http://185.84.163.5:8080'
+response = requests.get(url)
+
+if response.status_code == 200:
+    html = response.text
+    print(html)
+else:
+    print('Ошибка при получении страницы')
+    raise Exception("page is down")
