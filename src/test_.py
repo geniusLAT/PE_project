@@ -52,16 +52,18 @@ if __name__ =="__main__":
 
 
 import requests
+import pytest
 
-url = 'http://185.84.163.5:8080'
-response = requests.get(url)
+def test_read_main():
+    url = 'http://185.84.163.5:8080'
+    response = requests.get(url)
 
 
-assert response.status_code == 200
+    assert response.status_code == 200
 
-if response.status_code == 200:
-    html = response.text
-    print(html)
-else:
-    print('Ошибка при получении страницы')
-    raise Exception("page is down")
+    if response.status_code == 200:
+        html = response.text
+        print(html)
+    else:
+        print('Ошибка при получении страницы')
+        raise Exception("page is down")
