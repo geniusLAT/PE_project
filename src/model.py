@@ -12,7 +12,8 @@ text = ['У нас в есть убунты и текникал превью.',
 def analyse(text):
     text=[text]
     result=clf(text)
-    print(result)
+    #print(result)
     return result
 
-print(analyse("Кто любит жаб? Они крутые."))
+if __name__=='__main__':
+    print(analyse("Кто любит жаб? Они крутые."))

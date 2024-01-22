@@ -54,7 +54,7 @@ if __name__ =="__main__":
 import requests
 import pytest
 
-def test_read_main():
+def test_check_remote_web_page():
     url = 'http://185.84.163.5:8080'
     response = requests.get(url)
 
@@ -67,3 +67,17 @@ def test_read_main():
     else:
         print('Ошибка при получении страницы')
         raise Exception("page is down")
+
+import model
+
+def test_model_positive():
+    
+    r=str(model.analyse("Вы милые люди")[0]['label'])
+    assert r=='neutral'
+
+def test_model_negative():
+    
+    r=str(model.analyse("Вы твари")[0]['label'])
+    assert r=='toxic'
+    
+
