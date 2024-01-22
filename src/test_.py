@@ -56,6 +56,9 @@ import requests
 url = 'http://185.84.163.5:8080'
 response = requests.get(url)
 
+
+assert response.status_code == 200
+
 if response.status_code == 200:
     html = response.text
     print(html)
