@@ -1,9 +1,9 @@
+import requests
+import model
 '''from selenium import webdriver
 options = webdriver.ChromeOptions()
 from selenium.webdriver.common.by import By
 import time
-import requests
-import model
 
 URL='http://185.84.163.5:8080'
 
