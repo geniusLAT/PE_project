@@ -2,7 +2,8 @@
 options = webdriver.ChromeOptions()
 from selenium.webdriver.common.by import By
 import time
-
+import requests
+import model
 
 URL='http://185.84.163.5:8080'
 
@@ -15,7 +16,7 @@ def CheckPhrase(phrase):
         time.sleep(1)
 
         # Находим элемент input и вводим туда текст
-        input_element = driver.find_element(By.TAG_NAME,'input') 
+        input_element = driver.find_element(By.TAG_NAME,'input')
         input_element.send_keys(phrase)
 
         # Находим кнопку и нажимаем на неё
@@ -46,13 +47,9 @@ if __name__ =="__main__":
     assert CheckPhrase("")!='error'
     assert CheckPhrase("Вы твари")=='toxic'
     assert CheckPhrase("Вы милые люди")=='neutral'
-    
+
 '''
 
-
-
-import requests
-import pytest
 
 def test_check_remote_web_page():
     url = 'http://185.84.163.5:8080'
@@ -68,16 +65,14 @@ def test_check_remote_web_page():
         print('Ошибка при получении страницы')
         raise Exception("page is down")
 
-import model
 
 def test_model_positive():
     
     r=str(model.analyse("Вы милые люди")[0]['label'])
     assert r=='neutral'
 
+
 def test_model_negative():
     
     r=str(model.analyse("Вы твари")[0]['label'])
     assert r=='toxic'
-    
-
