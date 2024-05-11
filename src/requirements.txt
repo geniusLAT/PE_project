@@ -5,4 +5,3 @@ streamlit
 pipeline-ai
 transformers
 requests
-torch
