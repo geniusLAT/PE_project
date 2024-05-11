@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/geniusLAT/PE_project.git'
+            }
+        }
+
+        stage('Install Python and requirements') {
+            steps {
+                
+                sh 'sudo apt-get update'
+                sh 'sudo apt-get install -y python3 python3-pip'
+                sh 'sudo apt install -y python3.11-venv'
+                sh 'python3 -m venv venv'
+                sh '''cd venv
+                ls -la
+                cd bin
+                ls -la'''
+                sh 'venv/bin/pip3 --no-cache-dir install torch==2.1.0+cpu torchvision==0.16.0+cpu torchaudio==2.1.0 -f https://download.pytorch.org/whl/torch_stable.html'
+                sh 'venv/bin/pip3 install -r src/requirements.txt'
+                
+            }
+        }
+
+        stage('Run the application') {
+            steps {
+                sh 'venv/bin/streamlit run src/web_app.py'
+                sh 'echo lol'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Build successful! Application is running.'
+        }
+
+        failure {
+            echo 'Build failed!'
+        }
+
+        always {
+            echo 'Cleaning up...'
+           
+        }
+    }
+}
