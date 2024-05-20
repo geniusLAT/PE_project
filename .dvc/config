@@ -1,0 +1,6 @@
+[core]
+    remote = myminio
+['remote "myminio"']
+    url = s3://185.84.163.5:9000/dvcbucket2
+    access_key_id= yZ9qhDgPHuqaRpQZ4kgH
+    secret_access_key= IksmsR3BHMCJQO9R9hqH72n7kMRHTG7xAlsRlpZN
