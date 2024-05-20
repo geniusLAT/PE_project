@@ -25,6 +25,16 @@ pipeline {
             }
         }
 
+	stage('Test with pytest') {
+            steps {
+                
+                
+                sh 'venv/bin/pip3 --no-cache-dir install pytest'
+                sh 'pytest src/test.py'
+                
+            }
+        }
+
         stage('Run the application') {
             steps {
                 sh 'venv/bin/streamlit run src/web_app.py'
