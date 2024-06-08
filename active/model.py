@@ -8,8 +8,8 @@ text = ['У нас в есть убунты и текникал превью.', 
 
 
 def analyse(text):
-    text= [text]
-    result= clf(text)
+    text = [text]
+    result = clf(text)
     print(result)
     return result
 
