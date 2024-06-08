@@ -78,7 +78,7 @@ def test_model_negative():
 
 
 def test_from_file():
-    file = open('../test_data.csv', 'r',encoding= 'utf-8')
+    file = open('../test_data.csv', 'r', encoding='utf-8')
     content = file.read()
     file.close()
 
@@ -93,5 +93,6 @@ def test_from_file():
             raise Exception(" wrong example")
 
     assert True
+
 
 test_from_file()
