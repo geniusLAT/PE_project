@@ -1,5 +1,4 @@
 import streamlit as st
-
 import model
 
 # Создаем текстовое поле для ввода
@@ -11,6 +10,7 @@ output_text = st.empty()
 
 def process_text(input_text):
     return str(model.analyse(input_text)[0])
+
 
 # Обрабатываем введенный текст и выводим результат
 if st.button('Показать результат'):
