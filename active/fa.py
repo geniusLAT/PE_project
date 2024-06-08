@@ -9,8 +9,6 @@ def process(input_text):
 
 
 @app.get("/process_text/{text}")
-
-
 async def process_text(text: str):
     result = process(text)
     return {"result": result}
