@@ -78,20 +78,20 @@ def test_model_negative():
 
 
 def test_from_file():
-    file = open('../test_data.csv','r',encoding='utf-8')
+    file = open('../test_data.csv', 'r',encoding= 'utf-8')
     content = file.read()
     file.close()
 
-    lines= content.split('\n')
+    lines = content.split('\n')
     for line in lines:
-        words=line.split(';')
-        sentence= words[1]
+        words = line.split(';')
+        sentence = words[1]
         example = words[0]
         r = str(model.analyse(example)[0]['label'])
-        print(example, sentence,r,len(sentence),len(r))
-        if r!=sentence: 
+        print(example, sentence, r, len(sentence), len(r))
+        if r != sentence:
             raise Exception(" wrong example")
-    
+
     assert True
 
 test_from_file()
