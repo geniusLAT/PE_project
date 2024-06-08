@@ -12,4 +12,3 @@ def process(input_text):
 async def process_text(text: str):
     result = process(text)
     return {"result": result}
-
