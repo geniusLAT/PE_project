@@ -1,5 +1,5 @@
 import uvicorn
-import os 
+import os
 
 
 def example_function():
