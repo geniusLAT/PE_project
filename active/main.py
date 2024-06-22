@@ -1,5 +1,5 @@
 import uvicorn
-import os
+import os # noqa: F401
 
 if __name__ == "__main__":
     try:
