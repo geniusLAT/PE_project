@@ -1,10 +1,5 @@
 import uvicorn
-import os
-
-
-def example_function():
-    os.system("echo Hello")
-
+import os  # noqa: F401
 
 if __name__ == "__main__":
     try:
