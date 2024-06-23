@@ -51,20 +51,6 @@ if __name__ =="__main__":
 '''
 
 
-def test_check_remote_web_page():
-    url = 'http://185.84.163.5:8501'
-    response = requests.get(url)
-
-    assert response.status_code == 200
-
-    if response.status_code == 200:
-        html = response.text
-        print(html)
-    else:
-        print('Ошибка при получении страницы')
-        raise Exception("page is down")
-
-
 def test_model_positive():
 
     r = str(model.analyse("Вы милые люди")[0]['label'])
