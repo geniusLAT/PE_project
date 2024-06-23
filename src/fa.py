@@ -19,7 +19,7 @@ def process(input_text):
 async def process_text(text: str):
     try:
         result = process(text)
-        print("Text prosessed normally.")
+        print("Text processed normally.")
         return {"result": result}
 
     except Exception as e:

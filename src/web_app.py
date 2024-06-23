@@ -1,6 +1,7 @@
 import streamlit as st
 import model
 
+
 # Создаем текстовое поле для ввода
 input_text = st.text_input("Введите текст")
 
