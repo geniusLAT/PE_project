@@ -9,3 +9,4 @@ def test_model_negative():
 def test_model_positive():
     r = str(model.analyse("Вы милые люди")[0]['label'])
     assert r == 'neutral'
+    
