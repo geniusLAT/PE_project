@@ -11,12 +11,14 @@ text = ["У нас в есть убунты и текникал превью.",
         "иди на хер"
         ]
 
+
 # Функция для анализа текста
 def analyse(text):
     text = [text]
     result = clf(text)
     # print(result)
     return result
+
 
 # Проверка функции при запуске скрипта
 if __name__ == '__main__':
