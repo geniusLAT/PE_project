@@ -2,13 +2,14 @@ from transformers import pipeline
 
 # Создание классификатора для анализа тональности текста
 clf = pipeline(
-    task='sentiment-analysis',
-    model='SkolkovoInstitute/russian_toxicity_classifier')
+    task="sentiment-analysis", model="SkolkovoInstitute/russian_toxicity_classifier"
+    )
 
 # Примеры текстов для анализа
-text = ['У нас в есть убунты и текникал превью.',
-        'Как минимум два малолетних дегенерата в треде, мда.',
-        'иди на хер']
+text = ["У нас в есть убунты и текникал превью.",
+        "Как минимум два малолетних дегенерата в треде, мда.",
+        "иди на хер"
+        ]
 
 # Функция для анализа текста
 def analyse(text):
