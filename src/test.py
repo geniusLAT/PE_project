@@ -1,4 +1,3 @@
-import requests
 import model
 '''from selenium import webdriver
 options = webdriver.ChromeOptions()
