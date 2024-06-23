@@ -2,6 +2,11 @@ import requests
 import model
 
 
+def test_model_negative():
+
+    r = str(model.analyse("Вы твари")[0]['label'])
+    assert r == 'toxic'
+
 
 def test_model_positive():
 
@@ -9,7 +14,3 @@ def test_model_positive():
     assert r == 'neutral'
 
 
-def test_model_negative():
-
-    r = str(model.analyse("Вы твари")[0]['label'])
-    assert r == 'toxic'
