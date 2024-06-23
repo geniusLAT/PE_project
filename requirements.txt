@@ -1,7 +1,7 @@
+transformers
 uvicorn
 fastapi
 einops
 streamlit
 pipeline-ai
-transformers
 requests
