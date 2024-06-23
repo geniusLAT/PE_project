@@ -7,8 +7,10 @@ input_text = st.text_input("Введите текст")
 # Создаем поле для вывода
 output_text = st.empty()
 
+
 def process_text(input_text):
     return str(model.analyse(input_text)[0])
+
 
 # Обрабатываем введенный текст и выводим результат
 if st.button("Показать результат"):
